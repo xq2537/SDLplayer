@@ -1,0 +1,5 @@
+CC=/usr/bin/amd64-mingw32msvc-gcc
+SOURCES=srcs/main.c srcs/adb.c srcs/misc.c srcs/sensor_listener.c srcs/socket.c
+
+out/AndroVMplayer64.exe: ${SOURCES} lib/SDL64.dll lib/lib64OpenglRender.dll
+	${CC} -m64 -Iincludes -I../SDL-1.2.15/include/SDL -o out/AndroVMplayer64.exe ${SOURCES} lib/SDL64.dll lib/lib64OpenglRender.dll -lmsvcrt -lws2_32

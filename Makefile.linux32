@@ -1,0 +1,4 @@
+SOURCES=srcs/main.c srcs/adb.c srcs/misc.c srcs/sensor_listener.c srcs/socket.c
+
+out/AndroVMplayer: ${SOURCES} lib/libOpenglRender.so lib/linux32/libSDL.a
+	${CC} -m32 -Iincludes -I/usr/include/SDL -o out/AndroVMplayer ${SOURCES} lib/libOpenglRender.so lib/linux32/libSDL.a
